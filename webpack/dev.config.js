@@ -7,7 +7,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // пока все в одном. Потом надо разбить
 module.exports = {
   mode: 'development',
-  entry: [ "@babel/polyfill", "./src/app.tsx" ],
+  entry: [ "@babel/polyfill", path.resolve(__dirname, '../', 'src', 'client', 'app.tsx')],
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, '../','dist'),
@@ -36,7 +36,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebPackPlugin({
-      template: './src/index.html',
+      template: path.resolve(__dirname, '../', 'html', 'index.html'),//'./src/index.html',
       title: 'Webpack server'
     }),
     new webpack.HotModuleReplacementPlugin(),
@@ -47,7 +47,7 @@ module.exports = {
     // }),
   ],
   devServer: {
-    contentBase: './public',
+    contentBase: path.resolve(__dirname, '../', 'public'),//'./public',
     hot: true,
     port: 3000,
     open: true,
