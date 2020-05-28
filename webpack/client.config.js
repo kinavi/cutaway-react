@@ -6,7 +6,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'production',
-  entry: path.resolve(__dirname, '../', 'src', 'app.tsx'),
+  entry: path.resolve(__dirname, '../', 'src', 'client', 'app.tsx'),
   output: {
     path: path.resolve(__dirname, '../' ,'dist'),
     filename: 'index.js',
@@ -50,7 +50,7 @@ module.exports = {
     new ExtractTextPlugin('style.css'),
     // new webpack.IgnorePlugin(/jsdom$/),
     new HtmlWebPackPlugin({
-        template: './src/index.html',
+        template: path.resolve(__dirname, '../', 'html', 'index.html'), //'./src/index.html',
         title: 'Webpack server'
     }),
 
