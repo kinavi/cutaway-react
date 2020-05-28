@@ -2,13 +2,16 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 // пока все в одном. Потом надо разбить
 module.exports = {
-  entry: ["@babel/polyfill", "./src/app.tsx"],
+  mode: 'development',
+  entry: [ "@babel/polyfill", "./src/app.tsx" ],
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../','dist'),
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -31,17 +34,27 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebPackPlugin({
       template: './src/index.html',
+      title: 'Webpack server'
     }),
     new webpack.HotModuleReplacementPlugin(),
+    // new MiniCssExtractPlugin({
+    //   // Options similar to the same options in webpackOptions.output
+    //   // both options are optional
+    //   filename: 'style.css'
+    // }),
   ],
   devServer: {
     contentBase: './public',
     hot: true,
-    port: 3001,
+    port: 3000,
     open: true,
     historyApiFallback: true,
   },
   devtool: 'inline-source-map',
+  resolve: {
+    extensions: ['.jsx', '.tsx', '.ts', '.js']
+  }
 };
