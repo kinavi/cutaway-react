@@ -19,6 +19,5 @@ Responsible for the assembly **Webpack 4.43**
 
 ### Main scripts
 
-**yarn dev** - starting a local webpack server 
-
-**yarn build:client** - starts front end assembly 
+- **yarn dev** - starting a local webpack server 
+- **yarn build:client** - starts front end assembly 
