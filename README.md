@@ -16,3 +16,6 @@ Responsible for the assembly **Webpack 4.43**
 - [ ] Express
 - [ ] MongoDB
 
+### Main scripts
+**yarn dev** - starting a local webpack server
+**yarn build:client** - starts front end assembly 
