@@ -1,6 +1,6 @@
-# blank-react
+# About
 
-Blank-react is a blank for creating projects.
+**blank-react** is a blank for creating projects.
 
 Responsible for the assembly **Webpack 4.43**
 
