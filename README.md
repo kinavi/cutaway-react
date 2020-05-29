@@ -11,6 +11,7 @@ Responsible for the assembly **Webpack 4.43**
 - [ ] React router
 - [x] TS
 - [x] Sass
+- [ ] Eslint
 - [ ] Jest
 - [ ] Node
 - [ ] Express
