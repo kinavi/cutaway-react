@@ -2,7 +2,7 @@ import React from 'react';
 
 type HeaderType = {
     title: string,
-    children: JSX.Element
+    children: Array<JSX.Element>
 }
 
 const Header = (props: HeaderType): JSX.Element => {
@@ -19,7 +19,9 @@ const Header = (props: HeaderType): JSX.Element => {
           </p>
         </div>
         <div className="header__links-group">
-          {children}
+          <div className="header__links-container">
+            {children}
+          </div>
         </div>
       </div>
     </div>
