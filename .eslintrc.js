@@ -30,6 +30,7 @@ module.exports = {
     'jest',
   ],
   rules: {
+    'no-shadow': 'off',
     quotes: ['error', 'single', { allowTemplateLiterals: true }],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'react/jsx-props-no-spreading': 'off',
@@ -47,6 +48,7 @@ module.exports = {
     'jest/no-identical-title': 'error',
     'jest/prefer-to-have-length': 'warn',
     'jest/valid-expect': 'error',
+    // 'import/no-unresolved': [2, { ignore: ['*.( jpg | png )'] }],
   },
   settings: {
     react: {
