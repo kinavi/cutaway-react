@@ -1,0 +1,47 @@
+$height-min: 10%
+
+.page 
+    display: flex
+    flex-direction: column
+    
+    &__header
+        min-height: $height-min
+        background: red
+    &__footer
+        min-height: $height-min
+        background: red
+    &__body 
+        min-height: (100% - $height-min*2)
+        padding: 10px
+
+.test-perp
+    display: flex
+    flex-direction: column
+    perspective: 100px
+    height: 100%
+    // transform-style: preserve-3d
+    &__item
+        position: relative
+        width: 100%
+        height: 150px
+        margin-bottom: 10px
+        &_drag-start
+            // display: none
+            // position: absolute
+        // transform: translate3d(10px, 10px, 10px)
+        // translate: buy 
+        // animation: buy 1s ease-in-out 0.5s alternate infinite
+    &__item:nth-child(n)
+        background: #43665657
+    &__item:nth-child(2n)
+        background: #7e863970
+    &__item:nth-child(3n)
+        background: #86397c9e
+
+
+@keyframes buy
+    0%
+        transform: translate3d(0px, 0, 0px)
+    100%
+        transform: translate3d(0px, 200px, -50px)
+        
