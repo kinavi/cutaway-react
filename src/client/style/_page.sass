@@ -1,47 +1,287 @@
 $height-min: 10%
+$time-anim-page-container-in-out: 300ms
+$width-header: calc( 100% * 2/9 )
+$width-body: calc( 100% * 7/9 )
 
-.page 
+@mixin flex-center
     display: flex
-    flex-direction: column
+    align-items: center
+    justify-content: center
     
-    &__header
-        min-height: $height-min
-        background: red
-    &__footer
-        min-height: $height-min
-        background: red
-    &__body 
-        min-height: (100% - $height-min*2)
-        padding: 10px
+// .page 
+//     display: flex
+//     flex-direction: column
+    
+//     &__header
+//         min-height: $height-min
+//         background: red
+//     &__footer
+//         min-height: $height-min
+//         background: red
+//     &__body 
+//         min-height: (100% - $height-min*2)
+//         padding: 10px
 
-.test-perp
-    display: flex
-    flex-direction: column
-    perspective: 100px
+// .test-perp
+//     display: flex
+//     flex-direction: column
+//     perspective: 100px
+//     height: 100%
+//     // transform-style: preserve-3d
+//     &__item
+//         position: relative
+//         width: 100%
+//         height: 150px
+//         margin-bottom: 10px
+//         &_drag-start
+//             // display: none
+//             // position: absolute
+//         // transform: translate3d(10px, 10px, 10px)
+//         // translate: buy 
+//         // animation: buy 1s ease-in-out 0.5s alternate infinite
+//     &__item:nth-child(n)
+//         background: #43665657
+//     &__item:nth-child(2n)
+//         background: #7e863970
+//     &__item:nth-child(3n)
+//         background: #86397c9e
+
+.img
+    width: 100%
     height: 100%
-    // transform-style: preserve-3d
-    &__item
-        position: relative
-        width: 100%
-        height: 150px
-        margin-bottom: 10px
-        &_drag-start
-            // display: none
-            // position: absolute
-        // transform: translate3d(10px, 10px, 10px)
-        // translate: buy 
-        // animation: buy 1s ease-in-out 0.5s alternate infinite
-    &__item:nth-child(n)
-        background: #43665657
-    &__item:nth-child(2n)
-        background: #7e863970
-    &__item:nth-child(3n)
-        background: #86397c9e
-
+    object-fit: cover
 
 @keyframes buy
     0%
         transform: translate3d(0px, 0, 0px)
     100%
         transform: translate3d(0px, 200px, -50px)
+
+@keyframes collapse
+    0%  
+
+        // transform: translate3d(0px, 0%, 0px)
+    100%
+        // transform: translate3d(0px, -50%, 0px)
+    // position: absolute;
+    // top: 25%;
+    // width: 100%;
+@keyframes expand
+    0%
+        // transform: translate3d(0px, -50%, 0px)
+    100%
+        // transform: translate3d(0px, 0%, 0px)
+
+@keyframes filter-on
+    0%
+        // filter: none
+        // width: 100%
+        // height: calc( 100% / 2 )
+    100%
+        // width: 80%
+        // height: calc( 100% / 3 )
+        //filter: brightness(50%)
+
+@keyframes filter-off
+    0%
+        // width: 80%
+        height: calc( 100% / 3 )
+        // filter: brightness(50%)
+    100%
+        // width: 100%
+        height: calc( 100% / 2 )
+        // filter: none
+
+// .scroll
+//     display: flex
+//     flex-direction: column
+//     position: relative
+//     height: 250px
+//     margin-bottom: 10px
+//     &__photo
+//         // background: green
+//         height: calc( 100% / 2 )
+//         @include flex-center
+//         // background: url('/lenivec.jpg')
+//         // background-position: center
+//         // background-repeat: no-repeat
+//         // background-size: cover
+//         margin: 0 auto
+//         &_filter-on
+//             animation: filter-on 0.5s ease-in-out
+//             animation-fill-mode: forwards
+//         &_filter-off
+//             animation: filter-off 0.5s ease-in-out
+//             animation-fill-mode: forwards
+//     &__text-container
+//         background: red
+//         height: calc( 100% / 2 )
+//         @include flex-center
+//         border-radius: 15px
         
+//         &_collapse
+//             animation: collapse 0.5s ease-in-out
+//             animation-fill-mode: forwards
+//         &_expand
+//             animation: expand 0.5s ease-in-out
+//             animation-fill-mode: forwards
+//     &__label
+//         @include flex-center
+//         height: 100%
+//         width: calc( 100% *  1/4 )
+//         padding: 0px 20px
+//         text-transform: uppercase
+//         border-right: 1px solid black
+//         margin-right: -1px
+//     &__text
+//         @include flex-center
+//         height: 100%
+//         width: calc( 100% *  3/4 )
+//         padding: 0px 20px
+
+// .skills
+//     padding: 10px
+//     border-radius: 15px
+//     background: red
+//     &__item
+//         width: 50px
+
+@mixin flex-сentering
+    display: flex
+    align-items: center
+    justify-content: center
+ 
+
+@mixin font-header-title
+    text-transform: uppercase
+    text-align: center
+    line-height: 180%
+    letter-spacing: 0.3em
+    word-spacing: 6px
+    font-weight: bolder
+
+          
+@keyframes FontSizeOn
+    0%
+        transform: scale(1)
+    100%
+        // transition-property: transform
+        transform: scale(2.5)
+
+@keyframes FontSizeOff
+    0%
+        transform: scale(2.5)
+    100%
+        // transition-property: transform
+        transform: scale(1)
+
+// .page-one
+//     width: 100%
+//     // width: calc( 100% * 5/7 )
+//     opacity: 1
+//     background: green
+//     height: 100%
+//     // animation: body-in 0.5s ease-in-out 0.5s
+//     // animation-fill-mode: forwards
+//     // // visibility: hidden
+//     // &_out
+//     //     animation: body-out 0.5s ease-in-out 0.5s
+//     //     animation-fill-mode: forwards 
+// .page-two
+//     width: 100%
+//     height: 100%
+//     // width: calc( 100% * 5/7 )
+//     opacity: 1
+//     background: yellow
+//     // animation: body-in 0.5s ease-in-out 0.5s
+//     // animation-fill-mode: forwards
+//     // visibility: hidden
+
+@keyframes body-in
+    0%
+        opacity: 0
+        transform: translateX(100%)
+        // width: calc( 100% * 2/3 )
+    100%
+        opacity: 1
+        transform: translateX(0%)
+        // width: calc( 100% * 2/3 )
+
+@keyframes body-out
+    0%
+        opacity: 1
+        transform: translateX(0%)
+    100%
+        opacity: 0
+        transform: translateX(100%)
+
+@keyframes header-container-in
+    0%
+        width: calc( 100% )
+    100%
+        width: calc( 100% * 1/3 )
+
+// @keyframes body-container-in
+//     0%
+//         width: calc( 0 )
+//     100%
+//         width: calc( 100% * 2/3 )
+
+@keyframes emergence-in
+    0%
+        // transform: translateX(100%)
+        opacity: 0
+        // display: none
+    100%
+        // transform: translateX(0%)
+        opacity: 1
+        // display: flex
+
+
+// .animation-container-body
+//     width: calc( 100% * 5/7 )
+//     height: 100%
+// .css-test-enter 
+//     // background: green
+//     opacity: 0
+//     transform: translateX(0%)
+// .css-test-enter-active
+//     opacity: 1
+//     transform: translateX(100%)
+//     transition: transform 1s ease
+//     // animation: body-in 0.5s ease-in-out 0.5s
+//     // animation-fill-mode: forwards
+// .css-test-exit
+//     opacity: 1
+//     transform: translateX(100%)
+// .css-test-exit-active
+//     opacity: 0
+//     transform: translateX(0%)
+//     transition: transform 1s ease
+//     // animation: body-out 0.5s ease-in-out 0.5s
+//     // animation-fill-mode: forwards
+
+.css-test-enter
+    transition: transform $time-anim-page-container-in-out ease-out   
+.css-test-exit 
+    transition: opacity $time-anim-page-container-in-out ease-out
+
+.css-test-enter 
+    transform: translateX(100%)
+
+
+.css-test-enter.css-test-enter-active 
+    transform: translateX(0%)
+
+
+.css-test-exit 
+    position: absolute
+    top: 0
+//   left: 0
+//   width: 100%
+    opacity: 1
+    // transform: translateX(0%)
+
+.css-test-exit-active 
+    // transform: translateX(100%)
+    opacity: 0

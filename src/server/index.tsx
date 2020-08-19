@@ -8,5 +8,5 @@ console.log('path to static ->', pathStatic);
 app.use('/', express.static(pathStatic));
 
 app.listen(3001, () => {
-  console.log('Server is running --> port 3000');
+  console.log('Server is running --> port 3001');
 });

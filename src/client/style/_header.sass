@@ -1,0 +1,38 @@
+.header
+    width: $width-header// calc( 100% * 2/7 )
+    height: 100%
+    padding: 0 25px
+    color: white
+    position: relative
+    &__title-group
+        opacity: 0
+        height: calc( 100%*1/4 )
+        @include font-header-title
+        @include flex-сentering
+        animation: emergence-in 1s ease-in-out 0.5s
+        animation-fill-mode: forwards   
+    &__links-group
+        opacity: 0
+        height: calc( 100%*1/2 )
+        @include flex-сentering
+        flex-direction: column
+        animation: emergence-in 1s ease-in-out 0.5s
+        animation-fill-mode: forwards   
+    &__extra-information
+        opacity: 0
+        height: calc( 100%*1/4 )
+        @include flex-сentering
+        text-align: center
+        line-height: 140%
+        letter-spacing: 0.1em
+        word-spacing: 2px
+        animation: emergence-in 1s ease-in-out 0.5s
+        animation-fill-mode: forwards   
+    &__link
+        color: white
+        text-transform: uppercase
+        margin: 20px 10px
+        font-size: 20px
+        letter-spacing: 0.1em
+        text-align: center
+        width: 100%
